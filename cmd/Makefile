@@ -12,4 +12,28 @@
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the speci
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#
+# Go parameters
+GOCMD=go
+GOBUILD=$(GOCMD) build
+GOCLEAN=$(GOCMD) clean
+GOTEST=$(GOCMD) test
+GOGET=$(GOCMD) get
+BINARY_NAME=gocc
+
+PREFIX?=/usr/local
+INSTALL_BIN=$(PREFIX)/bin
+
+build:
+	$(GOGET)
+	$(GOBUILD) -o $(BINARY_NAME)
+
+clean:
+	$(GOCLEAN)
+
+install: build
+	@mkdir -p $(INSTALL_BIN)
+	cp $(BINARY_NAME) $(INSTALL_BIN)
