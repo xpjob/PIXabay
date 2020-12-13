@@ -1,0 +1,5 @@
+{
+  "name": "Simplified Chinese to Traditional Chinese",
+  "segmentation": {
+    "type": "mmseg",
+    "dict":
