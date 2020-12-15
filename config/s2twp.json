@@ -13,4 +13,20 @@
       "dicts": [{
         "type": "txt",
         "file": "STPhrases.txt"
-      }
+      }, {
+        "type": "txt",
+        "file": "STCharacters.txt"
+      }]
+    }
+  }, {
+    "dict": {
+      "type": "txt",
+      "file": "TWPhrases.txt"
+    }
+  }, {
+    "dict": {
+      "type": "txt",
+      "file": "TWVariants.txt"
+    }
+  }]
+}
