@@ -21,4 +21,17 @@ func TestConfig(t *testing.T) {
 			t.Error(err)
 		}
 		t.Logf("%+v", config)
-		m := con
+		m := config.(map[string]interface{})
+		for k, v := range m {
+			t.Logf("%+v", k)
+			switch vv := v.(type) {
+			case map[string]interface{}:
+				for i, u := range vv {
+					t.Logf("%+v, %+v", i, u)
+				}
+			default:
+				t.Logf("%+v", vv)
+			}
+		}
+	}
+}
